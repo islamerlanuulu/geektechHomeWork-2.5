@@ -33,6 +33,8 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         setup()
         fetchCharacters()
+        
+
     }
     
     private func setup() {
@@ -41,21 +43,31 @@ class StartViewController: UIViewController {
     }
     
     private func fetchCharacters() {
-        networkService.fetchCharacters { [weak self] result in
-            guard let self = self else {
-                return
-            }
-            switch result {
-            case .success(let model):
+        Task{
+            do {
+             characters = try await networkService.fetchCharacters()
                 DispatchQueue.main.async {
-                    self.characters = model
                     self.collectionView.reloadData()
                 }
-            case .failure(let error):
+            } catch {
                 print(error)
             }
         }
-        print(characters)
+//        networkService.fetchCharacters { [weak self] result in
+//            guard let self = self else {
+//                return
+//            }
+//            switch result {
+//            case .success(let model):
+//                DispatchQueue.main.async {
+//                    self.characters = model
+//                    self.collectionView.reloadData()
+//                }
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//        print(characters)
     }
 }
 

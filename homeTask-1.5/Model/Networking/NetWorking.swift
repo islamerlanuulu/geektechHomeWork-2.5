@@ -4,8 +4,8 @@
 //
 //  Created by Islam Erlan Uulu on 20/6/23.
 //
+import Foundation
 
-import UIKit
 struct NetworkService {
     
     enum RickAndMortyError: Error {
@@ -13,6 +13,18 @@ struct NetworkService {
     }
     
     static let shared = NetworkService()
+    
+    func fetchCharacters() async throws -> [Character] {
+        let request = URLRequest(
+            url: Constants
+                .API
+                .baseURL
+                .appendingPathComponent("character")
+        )
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        return try JSONDecoder().decode(Characters.self, from: data).results
+    }
     
     func fetchCharacters(
         completion: @escaping
