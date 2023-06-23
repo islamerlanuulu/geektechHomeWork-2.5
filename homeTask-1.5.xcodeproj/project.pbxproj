@@ -70,6 +70,12 @@
 		D6378A032A4141360038BD6D /* homeTask-1.5 */ = {
 			isa = PBXGroup;
 			children = (
+				D6378A392A4145AB0038BD6D /* Components */,
+				D6378A292A4144240038BD6D /* Const */,
+				D6378A2C2A41445C0038BD6D /* DTOs */,
+				D6378A2F2A41447D0038BD6D /* Extensions */,
+				D6378A322A4144A40038BD6D /* Helpers */,
+				D6378A352A4144C70038BD6D /* Networking */,
 				D6378A282A41440D0038BD6D /* Model */,
 				D6378A1B2A4141FB0038BD6D /* AppDelegate */,
 				D6378A1A2A4141C00038BD6D /* Vc */,
@@ -83,7 +89,6 @@
 		D6378A1A2A4141C00038BD6D /* Vc */ = {
 			isa = PBXGroup;
 			children = (
-				D6378A392A4145AB0038BD6D /* Components */,
 				D6378A182A4141A80038BD6D /* StartViewController.swift */,
 				D6BF565F2A41BD1B00FA1094 /* SecondViewController.swift */,
 			);
@@ -102,11 +107,6 @@
 		D6378A282A41440D0038BD6D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D6378A352A4144C70038BD6D /* Networking */,
-				D6378A322A4144A40038BD6D /* Helpers */,
-				D6378A2F2A41447D0038BD6D /* Extensions */,
-				D6378A2C2A41445C0038BD6D /* DTOs */,
-				D6378A292A4144240038BD6D /* Const */,
 			);
 			path = Model;
 			sourceTree = "<group>";
